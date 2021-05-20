@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000;
 //other type is a query parameter
 app.get('/hello/:name', (req, res) => {
   const name = req.params.name;
-  res.status(200).send({'message': `Hello ${name}!!!!!!`});
+  res.status(200).send({'message': `Hello ${name}!`});
 });
 
 // app.get('/goodbye', (req, res) => {
@@ -38,7 +38,7 @@ app.get('/planets/:id', (req, res) => {
   if (planet.length > 0) {
     res.status(200).send(planet[0]);
   } else {
-    res.status(404).send({error: 'Not found', message: 'it dont exist, try a different solar system'});
+    res.status(404).send({error: 'Not found', message: 'Planet not found'});
   }
 })
 
