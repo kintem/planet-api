@@ -69,7 +69,7 @@ app.post('/planets', (req, res) => {
     planets.push(planetToAdd);
     res.status(201).send({message: 'planet has been added', planet: planetToAdd});
   } else {
-    res.status(406).send({message: 'insufficient or incorrect type of data', planet: req.body});
+    res.status(400).send({message: 'insufficient or incorrect type of data', planet: req.body});
   }
 })
 
